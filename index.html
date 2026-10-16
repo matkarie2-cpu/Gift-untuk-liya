@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffe8f0">
+<title>Untuk Kamu ♡</title>
+<style>
+:root{--pink:#f6a9c4;--deep:#a83e68;--pale:#fff5f8;--ink:#593744;--card:#fffafd}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#fff3f7,#ffe6ef 48%,#fff7fa);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(100% - 28px,760px);margin:auto}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:36px 0;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"♡";position:absolute;color:#ef9dbb66;font-size:clamp(100px,30vw,220px);animation:float 5s ease-in-out infinite;pointer-events:none}
+.hero:before{left:-30px;top:4%}.hero:after{right:-24px;bottom:4%;animation-delay:-2s}
+@keyframes float{50%{transform:translateY(-14px) rotate(8deg)}}
+.kicker{letter-spacing:.18em;text-transform:uppercase;font:11px Arial,sans-serif;color:#b65c80}
+h1{font-size:clamp(42px,11vw,76px);font-weight:normal;line-height:1.02;margin:18px 0;color:#a83e68}
+.hero p{font-size:18px;line-height:1.65;max-width:450px;margin:0 auto 26px}
+.btn{border:0;border-radius:999px;padding:14px 22px;background:var(--deep);color:white;box-shadow:0 8px 24px #a83e6826;transition:transform .2s}
+.btn:active{transform:scale(.97)}
+.btn.secondary{background:#fff;color:var(--deep);border:1px solid #f0b5cb}
+main section{padding:52px 0}
+.section-title{text-align:center;font-size:clamp(29px,7vw,42px);font-weight:normal;color:var(--deep);margin:0 0 10px}
+.sub{text-align:center;color:#986477;line-height:1.6;margin:0 auto 26px;max-width:470px}
+.card{background:#ffffffc9;border:1px solid #f7d5e1;border-radius:24px;padding:20px;box-shadow:0 12px 40px #a83e680b}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.polaroid{background:white;padding:9px 9px 15px;border-radius:7px;box-shadow:0 8px 20px #8f3b5817;transform:rotate(-1deg)}
+.polaroid:nth-child(even){transform:rotate(1.4deg)}
+.polaroid img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px;background:#ffe5ef}
+.polaroid p{text-align:center;margin:10px 0 0;font-size:14px;color:#9a536e}
+.photo-placeholder{aspect-ratio:4/5;background:linear-gradient(135deg,#ffe3ed,#f9bcd2);display:grid;place-items:center;text-align:center;padding:12px;color:#a83e68;font-size:15px;border-radius:3px}
+.music-row{display:flex;align-items:center;gap:14px}
+.disc{width:58px;height:58px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle,#fff 0 9%,#d66b95 10% 15%,#f6a9c4 16% 100%);display:grid;place-items:center;color:white;font-size:22px;box-shadow:0 4px 15px #a83e6826}
+.music-copy{flex:1;min-width:0}.music-copy strong{display:block;margin-bottom:5px}.music-copy small{color:#986477;line-height:1.4}
+#musicStatus{font:12px Arial,sans-serif;color:#a83e68;margin-top:7px}
+.envelope-wrap{text-align:center}
+.envelope{margin:24px auto 18px;width:min(100%,300px);height:190px;position:relative;border:0;background:transparent;display:block;perspective:800px}
+.env-base{position:absolute;inset:18px 0 0;background:#f6b5cc;border-radius:8px;box-shadow:0 12px 25px #a83e6818}
+.env-flap{position:absolute;top:18px;left:0;width:100%;height:0;border-left:150px solid transparent;border-right:150px solid transparent;border-top:108px solid #e98daf;transform-origin:top;transition:transform .7s;z-index:3}
+.env-front{position:absolute;inset:48px 0 0;clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);background:#f8c5d7;z-index:4;border-radius:0 0 8px 8px}
+.seal{position:absolute;z-index:5;top:88px;left:calc(50% - 21px);width:42px;height:42px;border-radius:50%;background:#b94872;color:white;display:grid;place-items:center;font-size:21px;transition:opacity .3s}
+.envelope.open .env-flap{transform:rotateX(180deg);z-index:1}
+.envelope.open .seal{opacity:0}
+.letter{display:none;text-align:left;line-height:1.85;white-space:pre-line;animation:appear .6s ease}
+.letter.show{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+footer{text-align:center;padding:28px 12px 42px;color:#a15b75;font-size:13px}
+.heart{position:fixed;bottom:-30px;pointer-events:none;z-index:20;animation:rise 3s ease-out forwards}
+@keyframes rise{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+@media(min-width:600px){.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:26px}.hero p{font-size:20px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">sebuah hadiah kecil untuk seseorang yang spesial</div>
+    <h1>Hai, <span id="recipientHero">Sayang</span> ♡</h1>
+    <p>Aku punya sesuatu untuk kamu. Mungkin sederhana, tapi aku membuatnya dengan sepenuh hati.</p>
+    <button class="btn" id="openGift">Buka hadiah kecilmu ♡</button>
+    <p style="font-size:13px;margin-top:18px;color:#b56b87">dibuat khusus untukmu</p>
+  </div>
+</header>
+
+<main id="content">
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Potongan cerita kita</h2>
+      <p class="sub">Beberapa ruang kecil untuk menyimpan kenangan yang berarti. Ganti gambar dan caption ini dengan cerita kalian sendiri.</p>
+      <div class="gallery">
+        <div class="polaroid"><img src="images/kenangan-1.jpg" alt="Kenangan pertama"><p>Awal cerita kita ♡</p></div>
+        <div class="polaroid"><img src="images/kenangan-2.jpg" alt="Foto kita bersama"><p>Momen favoritku</p></div>
+        <div class="polaroid"><img src="images/kenangan-3.jpg" alt="Foto kamu"><p>Yang ingin kuingat</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Lagu untukmu</h2>
+      <p class="sub">Putar lagu pilihanmu sambil membaca pesan ini. Musik mulai setelah kamu menekan tombol, karena browser HP biasanya memerlukan interaksi pengguna.</p>
+      <div class="card music-row">
+        <div class="disc">♫</div>
+        <div class="music-copy"><strong>Our little soundtrack</strong><small>Ganti file musik dengan lagu yang ingin kamu bagikan.</small><div id="musicStatus">Belum diputar</div></div>
+        <button class="btn" id="musicButton" style="padding:12px 15px">▶ Putar</button>
+      </div>
+      <audio id="music" loop preload="none"></audio>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap envelope-wrap">
+      <h2 class="section-title">Ada surat untukmu</h2>
+      <p class="sub">Ketuk amplopnya untuk membuka pesan rahasia ♡</p>
+      <button class="envelope" id="envelope" aria-label="Buka surat rahasia" aria-expanded="false">
+        <span class="env-base"></span><span class="env-flap"></span><span class="env-front"></span><span class="seal">♥</span>
+      </button>
+      <button class="btn secondary" id="letterButton">Buka surat rahasia</button>
+      <article class="card letter" id="letter">
+Sayang,
+
+Aku mungkin nggak selalu pandai merangkai kata, tapi aku ingin kamu tahu kalau kehadiranmu berarti banyak buatku.
+
+Terima kasih sudah menjadi bagian dari hari-hariku. Semoga kita terus punya alasan untuk tertawa, saling mendukung, dan membuat kenangan baru bersama.
+
+Kalau suatu hari kamu merasa lelah, semoga surat kecil ini mengingatkanmu bahwa kamu berharga dan pantas mendapatkan hal-hal baik.
+
+Aku sayang kamu, hari ini dan di hari-hari yang akan datang. ♡
+
+— seseorang yang selalu mendoakanmu
+      </article>
+    </div>
+  </section>
+</main>
+<footer>dibuat dengan ♡, khusus untukmu</footer>
+
+<script>
+/* PERSONALISASI CEPAT:
+   Ubah nama di bawah ini.
+   Foto: ganti placeholder di galeri dengan <img src="images/foto1.jpg" alt="Kenangan kita">
+   Musik: taruh file bernama music.mp3 di folder yang sama dan isi src audio di bawah.
+*/
+const recipient = "Sayang"; // Ganti dengan nama/panggilan penerima
+document.title = `Untuk ${recipient} ♡`;
+document.getElementById("recipientHero").textContent = recipient;
+const letter = document.getElementById("letter");
+const envelope = document.getElementById("envelope");
+function openLetter(){
+  const isOpen = letter.classList.toggle("show");
+  envelope.classList.toggle("open", isOpen);
+  envelope.setAttribute("aria-expanded", String(isOpen));
+  document.getElementById("letterButton").textContent = isOpen ? "Tutup surat" : "Buka surat rahasia";
+  if(isOpen) letter.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+envelope.addEventListener("click", openLetter);
+document.getElementById("letterButton").addEventListener("click", openLetter);
+document.getElementById("openGift").addEventListener("click",()=>{
+  document.getElementById("content").scrollIntoView({behavior:"smooth"});
+  for(let i=0;i<12;i++) setTimeout(makeHeart,i*100);
+});
+function makeHeart(){
+  const el=document.createElement("span");
+  el.className="heart";el.textContent=["♡","♥","✿","💕"][Math.floor(Math.random()*4)];
+  el.style.left=Math.random()*100+"vw";el.style.fontSize=(16+Math.random()*20)+"px";
+  el.style.color=["#d66b95","#e98daf","#b94872"][Math.floor(Math.random()*3)];
+  document.body.appendChild(el);setTimeout(()=>el.remove(),3200);
+}
+const audio=document.getElementById("music");
+const musicButton=document.getElementById("musicButton");
+const musicStatus=document.getElementById("musicStatus");
+audio.src="music.mp3"; // Taruh music.mp3 di folder yang sama, atau ubah URL ke file audio milikmu.
+musicButton.addEventListener("click",async()=>{
+  if(audio.paused){
+    try{await audio.play();musicButton.textContent="Ⅱ Jeda";musicStatus.textContent="Sedang diputar ♫";}
+    catch(e){musicStatus.textContent="Tambahkan file music.mp3 ke folder website terlebih dahulu.";}
+  }else{audio.pause();musicButton.textContent="▶ Putar";musicStatus.textContent="Dijeda";}
+});
+audio.addEventListener("ended",()=>{musicButton.textContent="▶ Putar";musicStatus.textContent="Selesai diputar";});
+</script>
+</body>
+</html>
